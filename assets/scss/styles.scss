@@ -139,8 +139,7 @@ textarea {
   }
 }
 
-.brand-mark,
-.project-mark {
+.brand-mark {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -342,8 +341,7 @@ h3 {
   }
 }
 
-.portrait-card,
-.gallery-placeholder {
+.portrait-card {
   border: 1px solid $line;
   background: linear-gradient(135deg, rgba($nude, 0.58), rgba($lavender, 0.18));
   border-radius: 8px;
@@ -455,17 +453,43 @@ h3 {
   gap: 1rem;
 }
 
-.gallery-placeholder {
-  display: grid;
-  place-items: center;
+.gallery-item {
+  position: relative;
   min-height: 340px;
-  padding: 1rem;
-  color: $olive-gray;
-  font-weight: 800;
-  text-align: center;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $warm-white;
+  box-shadow: 0 14px 34px rgba(52, 56, 47, 0.07);
 
-  &:first-child {
-    min-height: 440px;
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    object-fit: cover;
+  }
+
+  figcaption {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    padding: 0.55rem 0.7rem;
+    color: $warm-white;
+    background: rgba($ink, 0.68);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+}
+
+.gallery-featured {
+  grid-row: span 2;
+  min-height: 700px;
+
+  img {
+    min-height: 700px;
   }
 }
 
@@ -518,17 +542,28 @@ h3 {
 
 .project-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
   gap: 1.25rem;
   align-items: center;
   padding: clamp(1.25rem, 4vw, 2rem);
 }
 
-.project-mark {
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  font-size: 1.5rem;
+.project-logo {
+  width: 100%;
+  max-width: 240px;
+  margin: 0;
+  padding: 0.7rem;
+  border: 1px solid $line;
+  border-radius: 8px;
+  background: $warm-white;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
 }
 
 .text-link {
@@ -677,8 +712,14 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .gallery-placeholder:first-child {
+  .gallery-featured {
     grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 440px;
+
+    img {
+      min-height: 440px;
+    }
   }
 
   .sticky-heading {
@@ -729,8 +770,13 @@ h3 {
   }
 
   .portrait-placeholder,
-  .gallery-placeholder,
-  .gallery-placeholder:first-child {
+  .gallery-item,
+  .gallery-featured {
+    min-height: 280px;
+  }
+
+  .gallery-item img,
+  .gallery-featured img {
     min-height: 280px;
   }
 
