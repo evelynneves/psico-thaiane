@@ -1018,3 +1018,83 @@ h3 {
     animation-iteration-count: 1 !important;
   }
 }
+
+@media (max-width: 620px) {
+  .gallery.carousel {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2.2rem;
+  }
+
+  .gallery.carousel .carousel-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 350ms ease;
+    will-change: transform;
+    padding: 0;
+  }
+
+  .gallery.carousel .gallery-item {
+    min-width: 100%;
+    flex: 0 0 100%;
+    margin: 0;
+    min-height: 280px;
+  }
+
+  .gallery.carousel .gallery-featured {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 280px;
+  }
+
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .carousel-button {
+    pointer-events: auto;
+    background: rgba(52, 56, 47, 0.7);
+    color: #faf7f4;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.15rem;
+  }
+
+  .carousel-button:focus {
+    outline: 3px solid #cdb7d9;
+    outline-offset: 3px;
+  }
+
+  .carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 0.5rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(250, 247, 244, 0.6);
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+  }
+
+  .carousel-dot.is-active {
+    background: #7b826c;
+  }
+}
