@@ -1,3 +1,38 @@
+# Publicar o site
+
+Opções rápidas para publicar este site estático:
+
+- GitHub Pages (recomendado para sites estáticos simples)
+- Netlify (arrastar/soltar ou deploy via Git)
+- Vercel (deploy via Git)
+
+Passos mínimos com GitHub Pages (execute no seu computador):
+
+```bash
+git init
+git add .
+git commit -m "Initial site"
+git branch -M main
+# crie o repositório remoto no GitHub e substitua a URL abaixo
+git remote add origin https://github.com/SEU_USUARIO/SEU_REPO.git
+git push -u origin main
+```
+
+Depois de empurrar para o GitHub, ative o GitHub Pages nas configurações do repositório:
+
+- Settings → Pages → Source → Deploy from a branch → Branch: `gh-pages` (ou `main` se preferir usar `/docs`)
+
+Ou use o workflow de GitHub Actions incluído para publicar automaticamente para a branch `gh-pages` sempre que houver push em `main`.
+
+Alternativas:
+- Netlify: crie uma conta, conecte seu repositório Git e defina o diretório de publicação como `/`.
+- Vercel: conecte o repositório e clique em Deploy.
+
+Se quiser, eu posso:
+
+- criar e ajustar o workflow de CI (já disponível em `.github/workflows/deploy.yml`),
+- orientar nos comandos para criar o repositório remoto e empurrar o código,
+- configurar um domínio personalizado (CNAME).
 # Landing page - Thaiane Rodrigues Henrique
 
 Landing page estática em HTML, SCSS/CSS e JavaScript.
