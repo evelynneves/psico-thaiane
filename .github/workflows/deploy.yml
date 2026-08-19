@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          # manter credenciais para permitir operações git subsequentes
+          persist-credentials: true
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v3
